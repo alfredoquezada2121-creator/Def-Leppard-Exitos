@@ -1,0 +1,140 @@
+/* ============================================
+   VARIABLES DE COLOR Y TIPOGRAFÍA
+   ============================================ */
+:root {
+    --color-fondo: #000000;
+    --color-texto: #f0f0f0;
+    --color-acento: #e63946;
+    --color-acento-hover: #ff6b6b;
+    --color-sombra: #1a1a1a;
+    --color-borde: #333333;
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fuente-titulos: 'Impact', 'Arial Black', sans-serif;
+}
+
+/* ============================================
+   ESTILOS BASE
+   ============================================ */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-principal);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+/* CONFIGURACIÓN EXACTA: 4 Columnas hacia los lados */
+.grid-canciones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 25px;
+}
+
+.bloque-cancion {
+    padding-bottom: 10px;
+}
+
+.enlace-boton {
+    display: inline-block;
+    width: 65%;
+    max-width: 140px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 12px;
+    border-bottom: 6px solid #555555;
+    border-radius: 8px;
+    box-shadow: 0 6px 0 #222222;
+    transition: all 0.1s ease;
+}
+
+.gif-boton {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.enlace-boton:hover {
+    filter: brightness(1.1);
+}
+
+.enlace-boton:active {
+    border-bottom: 2px solid #333333;
+    box-shadow: 0 2px 0 #111111;
+    transform: translateY(4px);
+}
+/* ============================================
+   PSEUDO-CLASE :FOCUS (ACCESIBILIDAD)
+   ============================================ */
+.enlace-boton:focus {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 3px;
+    filter: brightness(1.2);
+}
+
+/* ============================================
+   AJUSTES DE ESPACIADO Y SOMBRAS
+   ============================================ */
+.bloque-cancion {
+    background-color: #111111;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bloque-cancion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(230, 57, 70, 0.3);
+}
+
+h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    color: var(--color-acento-hover);
+    border-bottom: 2px solid var(--color-acento);
+    padding-bottom: 8px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+h5 {
+    font-size: 1rem;
+    color: #aaaaaa;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+p {
+    font-size: 0.95rem;
+    color: var(--color-texto);
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+p strong {
+    color: var(--color-acento-hover);
+    font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+    .grid-canciones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .grid-canciones {
+        grid-template-columns: 1fr;
+    }
+}
